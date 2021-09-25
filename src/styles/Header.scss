@@ -1,0 +1,14 @@
+@import '../App.scss';
+
+#header {
+    color: rgba($color: #000000, $alpha: 0.7);
+    text-align: center;
+
+    .title {
+        margin: 0;
+    }
+
+    .moves {
+        margin: 0;
+    }
+}

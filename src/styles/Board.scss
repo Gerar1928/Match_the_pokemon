@@ -1,0 +1,9 @@
+@import '../App.scss';
+
+#board {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(165px, 180px);
+    padding: 5px;
+}

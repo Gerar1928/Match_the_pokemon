@@ -1,3 +1,5 @@
+import '../styles/Header.scss';
+
 const Header = ({ counter }: { counter: number }) => {
     return(
         <header id='header'>

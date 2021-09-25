@@ -1,0 +1,29 @@
+@import '../App.scss';
+
+%card-styling {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+
+    .front-card {
+        @extend %card-styling;
+        transform: scale(0);
+    }
+
+    .back-card {
+        @extend %card-styling;
+        transform: scale(1);
+    }
+
+    .flipped-front {
+        transform: scale(1) !important;
+    }
+
+    .flipped-front {
+        transform: scale(0) !important;
+    }
+}
