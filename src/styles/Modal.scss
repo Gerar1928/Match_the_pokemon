@@ -1,0 +1,26 @@
+@import '../App.scss';
+
+#modal {
+    bottom: 50%;
+    right: 45%;
+    position: fixed;
+    z-index: 1;
+
+    .start-game-btn {
+        background-color: #CF0000;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 5px;
+        transition: ease-out 0.3s;
+
+        &:hover {
+            background-color: #0D0CB5;
+            transition: ease-out 0.3s;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import '../styles/Header.scss';
 
-const Header = ({ counter }: { counter: number }) => {
+const Header = ({ counter }: { counter: number | ((prevState: number) => number) }) => {
     return(
         <header id='header'>
             <h1 className='title'>Memory Matching Game</h1>
