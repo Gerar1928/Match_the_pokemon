@@ -1,20 +1,16 @@
-import { useRef } from 'react';
+import { forwardRef } from 'react';
 import '../styles/Modal.scss';
 
-const Modal = ({ overlayRef }: { overlayRef: HTMLDivElement | null }) => {
+type Props = {
+    startGame: () => void
+}
 
-    const modalRef = useRef<HTMLDivElement | null>(null);
-
-    const startGame = (): void => {
-        overlayRef!.classList.add('deactivate');
-        modalRef.current!.classList.add('deactivate');
-    }
-
+const Modal = forwardRef<HTMLDivElement, Props>(({ startGame }, ref) => {
     return (
-        <div id='modal' ref={ modalRef }>
+        <div id='modal' ref={ ref }>
             <button className='start-game-btn' onClick={ startGame }>Start Game</button>
         </div>
     );
-}
+});
 
 export default Modal;

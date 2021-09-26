@@ -1,6 +1,11 @@
 import '../styles/Card.scss';
 
-const Card = ({imgName, arrIndex}: {imgName: string, arrIndex: number}) => {
+type Props = {
+    imgName: string,
+    arrIndex: number
+}
+
+const Card = ({imgName, arrIndex}: Props) => {
     return (
         <div className='card' data-index={ arrIndex }>
             <img src={ process.env.PUBLIC_URL + '/images/cards/' + imgName } alt="card" className='front-card'/>

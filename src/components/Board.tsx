@@ -2,7 +2,11 @@ import '../styles/Board.scss';
 import { useRef } from 'react';
 import Card from './Card';
 
-const Board = ({ setCounter }: { setCounter: (fn: number | ((prevState: number) => number)) => void }) => {
+type Props = {
+    setCounter: (fn: number | ((prevState: number) => number)) => void
+}
+
+const Board = ({ setCounter }: Props) => {
 
     const boardRef = useRef<HTMLDivElement | null>(null);
 

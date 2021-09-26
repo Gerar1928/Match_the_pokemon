@@ -6,16 +6,19 @@ import Modal from './components/Modal';
 
 const App = () => {
     const overlayRef = useRef<HTMLDivElement>(null);
-    
-    // ((): void => {
-    //     console.log('Initializing...');
-    // })();
+    const modalRef = useRef<HTMLDivElement | null>(null);
+
+    // Starts the game.
+    const startGame = (): void => {
+        overlayRef.current!.classList.add('deactivate');
+        modalRef.current!.classList.add('deactivate');
+    }
 
     return (
         <>
             <Game />
             <Overlay ref={ overlayRef }/>
-            <Modal overlayRef={ overlayRef.current }/>
+            <Modal startGame={ startGame } ref={ modalRef }/>
         </>
     );
 }
