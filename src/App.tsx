@@ -6,6 +6,10 @@ import Modal from './components/Modal';
 
 const App = () => {
     const overlayRef = useRef<HTMLDivElement>(null);
+    
+    // ((): void => {
+    //     console.log('Initializing...');
+    // })();
 
     return (
         <>

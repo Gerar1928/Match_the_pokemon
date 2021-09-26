@@ -6,8 +6,8 @@ const Modal = ({ overlayRef }: { overlayRef: HTMLDivElement | null }) => {
     const modalRef = useRef<HTMLDivElement | null>(null);
 
     const startGame = (): void => {
-        console.log(overlayRef!);
-        console.log(modalRef);
+        overlayRef!.classList.add('deactivate');
+        modalRef.current!.classList.add('deactivate');
     }
 
     return (
