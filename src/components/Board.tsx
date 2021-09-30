@@ -48,7 +48,7 @@ const Board = ({ setCounter, cards }: Props) => {
                         back_card!.classList.remove('flipped-back');
 
                         setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '' }));
-                    }, 1000)
+                    }, 500)
                 } else {
                     setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '', matchedCards: prevState.matchedCards + 1 }));
 
@@ -59,8 +59,6 @@ const Board = ({ setCounter, cards }: Props) => {
             }
         }
     }
-
-    console.log(flippedCard.matchedCards);
 
     return (
         <div id='board' onClick={ flipCards } ref={ boardRef }>
