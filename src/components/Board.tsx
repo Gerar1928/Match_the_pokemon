@@ -1,15 +1,24 @@
 import '../styles/Board.scss';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Card from './Card';
 
 type Props = {
     setCounter: (fn: number | ((prevState: number) => number)) => void,
-    cards: string[]
+    cards: string[],
+    overlayRef: any;
 }
 
-const Board = ({ setCounter, cards }: Props) => {
+const Board = ({ setCounter, cards, overlayRef }: Props) => {
     const [flippedCard, setFlippedCard] = useState<{ firstTime: boolean, storedCard: string | null, matchedCards: number }>({ firstTime: false, storedCard: '', matchedCards: 0 });
     const boardRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        setTimeout(() => {
+            if(flippedCard.matchedCards === 9) {
+                overlayRef.current.classList.remove('deactivate');
+            }
+        }, 500);
+    });
 
     // Returns the element if the condition is true.
     const returnElement = (condition: boolean, element: Element): Element | undefined => {
@@ -48,13 +57,9 @@ const Board = ({ setCounter, cards }: Props) => {
                         back_card!.classList.remove('flipped-back');
 
                         setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '' }));
-                    }, 500)
+                    }, 500);
                 } else {
                     setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '', matchedCards: prevState.matchedCards + 1 }));
-
-                    if(flippedCard.matchedCards === 9) {
-                        
-                    }
                 }
             }
         }

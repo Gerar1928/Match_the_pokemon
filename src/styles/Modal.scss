@@ -1,26 +1,40 @@
 @import '../App.scss';
 
 #modal {
-    bottom: 50%;
-    right: 45%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    bottom: 31%;
+    box-shadow: 0px 0px 15px 5px rgba(255,255,255,0.74);
+    display: grid;
+    grid-template-rows: repeat(2, 80px);
+    left: 23%;
+    padding: 10px;
     position: fixed;
+    text-align: center;
     z-index: 1;
 
-    .start-game-btn {
-        background-color: #CF0000;
-        border: none;
-        border-radius: 5px;
-        color: #ffffff;
-        cursor: pointer;
-        font-family: 'Titillium Web', sans-serif;
-        font-size: 25px;
-        font-weight: bold;
-        padding: 5px;
-        transition: ease-out 0.3s;
+    .button-container {
+        align-items: center;
+        display: grid;
+        justify-items: center;
 
-        &:hover {
-            background-color: #0D0CB5;
+        .start-game-btn {
+            background-color: #3C5AA6;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 5px;
             transition: ease-out 0.3s;
+    
+            &:hover {
+                background-color: #FFFFFF;
+                color: #3C5AA6;
+                transition: ease-out 0.3s;
+            }
         }
     }
 }

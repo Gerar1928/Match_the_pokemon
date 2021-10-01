@@ -33,7 +33,7 @@ const App = () => {
 
     return (
         <>
-            <Game cards={ cards }/>
+            <Game cards={ cards } overlayRef={ overlayRef }/>
             <Overlay ref={ overlayRef }/>
             <Modal startGame={ startGame } ref={ modalRef }/>
         </>
