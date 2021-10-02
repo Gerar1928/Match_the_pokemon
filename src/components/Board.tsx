@@ -1,21 +1,30 @@
 import '../styles/Board.scss';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Card from './Card';
 
 type Props = {
     setCounter: (fn: number | ((prevState: number) => number)) => void,
     cards: string[],
+    flippedCard: { firstTime: boolean, storedCard: string | null, matchedCards: number },
+    setFlippedCard: (obj: any) => void;
+    gameoverRef: any,
     overlayRef: any;
 }
 
-const Board = ({ setCounter, cards, overlayRef }: Props) => {
-    const [flippedCard, setFlippedCard] = useState<{ firstTime: boolean, storedCard: string | null, matchedCards: number }>({ firstTime: false, storedCard: '', matchedCards: 0 });
+const Board = ({ setCounter, cards, flippedCard, setFlippedCard, gameoverRef, overlayRef }: Props) => {
     const boardRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         setTimeout(() => {
             if(flippedCard.matchedCards === 9) {
+                gameoverRef.current.classList.remove('deactivate');
                 overlayRef.current.classList.remove('deactivate');
+                
+                setFlippedCard({ firstTime: false, storedCard: '', matchedCards: 0 });
+
+                Array.from(boardRef.current!.children)
+                    .forEach((card: Element): void => Array.from(card.children)
+                    .forEach((child: Element): void => child.classList.contains('front-card') ? child.classList.remove('flipped-front') : child.classList.remove('flipped-back')));
             }
         }, 500);
     });
@@ -37,8 +46,6 @@ const Board = ({ setCounter, cards, overlayRef }: Props) => {
     
             front_card!.classList.add('flipped-front');
             back_card!.classList.add('flipped-back');
-    
-            setCounter((prevState: number): number => ++prevState);
 
             // Game logic below.
             if (!flippedCard.firstTime) {
@@ -57,9 +64,11 @@ const Board = ({ setCounter, cards, overlayRef }: Props) => {
                         back_card!.classList.remove('flipped-back');
 
                         setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '' }));
+                        setCounter((prevState: number): number => ++prevState);
                     }, 500);
                 } else {
                     setFlippedCard((prevState: any): any => ({...prevState, firstTime: false, storedCard: '', matchedCards: prevState.matchedCards + 1 }));
+                    setTimeout(() => setCounter((prevState: number): number => ++prevState), 500);
                 }
             }
         }

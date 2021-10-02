@@ -1,0 +1,23 @@
+@import '../App.scss';
+
+#gameover-modal {
+    @extend %modal-style;
+    bottom: 39%;
+    left: 38%;
+    width: 300px;
+
+    .title {
+        h1, h2, h3 {
+            margin: 0;
+        }
+    }
+
+    .stars {
+        color: #FFC107;
+        font-size: 30px;
+    }
+
+    .button-container {
+        @extend %button-container-style;
+    }
+}

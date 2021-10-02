@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
+%modal-style {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 5px rgba(255,255,255,0.74);
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+}
+
+%button-container-style {
+    align-items: center;
+    display: grid;
+    justify-items: center;
+
+    .start-game-btn {
+        background-color: #3C5AA6;
+        border: none;
+        border-radius: 5px;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 5px;
+        transition: ease-out 0.3s;
+
+        &:hover {
+            background-color: #FFFFFF;
+            color: #3C5AA6;
+            transition: ease-out 0.3s;
+        }
+    }
+}
+
 * {
     box-sizing: border-box;
 }
