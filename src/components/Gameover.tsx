@@ -2,7 +2,7 @@ import '../styles/Gameover.scss';
 import { forwardRef } from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
-type Props = {
+export interface Props {
     counter: number | ((prevState: number) => number),
     restartGame: () => void;
 }

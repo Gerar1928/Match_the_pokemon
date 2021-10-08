@@ -1,6 +1,6 @@
 import '../styles/Card.scss';
 
-type Props = {
+export interface Props {
     imgName: string,
     arrIndex: number
 }

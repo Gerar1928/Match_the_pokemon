@@ -2,7 +2,7 @@ import '../styles/Board.scss';
 import { useRef, useEffect } from 'react';
 import Card from './Card';
 
-type Props = {
+export interface Props {
     setCounter: (fn: number | ((prevState: number) => number)) => void,
     cards: string[],
     flippedCard: { firstTime: boolean, storedCard: string | null, matchedCards: number },

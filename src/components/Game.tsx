@@ -2,7 +2,7 @@ import '../styles/Game.scss';
 import Header from './Header';
 import Board from './Board';
 
-type Props = {
+export interface Props {
     cards: string[],
     counter: number | ((prevState: number) => number),
     setCounter: (fn: number | ((prevState: number) => number)) => void,
@@ -14,7 +14,7 @@ type Props = {
 
 const Game = ({ cards, counter, setCounter, flippedCard, setFlippedCard, gameoverRef, overlayRef }: Props) => {
     return(
-        <div id='game'>
+        <div id='game' data-testid='game'>
             <Header counter={ counter }/>
             <Board setCounter={ setCounter } cards={ cards } flippedCard={ flippedCard } setFlippedCard={ setFlippedCard } 
                 gameoverRef={ gameoverRef } overlayRef={ overlayRef }/>

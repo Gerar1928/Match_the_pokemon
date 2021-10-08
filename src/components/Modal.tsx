@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import '../styles/Modal.scss';
 
-type Props = {
+export interface Props {
     startGame: () => void
 }
 

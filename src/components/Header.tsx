@@ -1,6 +1,6 @@
 import '../styles/Header.scss';
 
-type Props = {
+export interface Props {
     counter: number | ((prevState: number) => number)
 }
 
