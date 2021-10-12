@@ -6,8 +6,8 @@ export interface Props {
 
 const Header = ({ counter }: Props) => {
     return(
-        <header id='header'>
-            <h3 className='moves'>Moves: { counter }</h3>
+        <header id='header' data-testid='header'>
+            <h3 className='moves' data-testid='moves'>Moves: { counter }</h3>
         </header>
     );
 }

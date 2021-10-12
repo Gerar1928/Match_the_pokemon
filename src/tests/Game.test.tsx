@@ -8,7 +8,7 @@ const renderChildComponents = (props: Partial<Props> = {}) => {
         'EspeonDeoxys.jpg', 'EspeonDeoxys.jpg', 'GengarMimikyu.jpg', 'GengarMimikyu.jpg', 'PikachuZekrom.jpg', 
         'PikachuZekrom.jpg', 'RaichuAlolanRaichu.jpg', 'RaichuAlolanRaichu.jpg', 'LucarioMelmetal.jpg', 'LucarioMelmetal.jpg'],
         counter: 1,
-        setCounter(fn: number | ((prevState: number) => number)) {
+        setCounter(fn: number | ((prevState: number) => number)): void {
             return;
         },
         flippedCard: { 
@@ -29,9 +29,7 @@ const renderChildComponents = (props: Partial<Props> = {}) => {
 describe('<Game />', () => {
     test('Display child components.', async () => {
         const { findByTestId } = renderChildComponents();
-
         const gameComponent = await findByTestId('game');
-
         expect(gameComponent).toHaveAttribute('id', 'game');
     });
 });
