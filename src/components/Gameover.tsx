@@ -38,7 +38,7 @@ const Gameover = forwardRef<HTMLDivElement, Props>(({ counter, restartGame }, re
     }
 
     return(
-        <div id='gameover-modal' className='deactivate' ref={ ref }>
+        <div id='gameover-modal' className='deactivate' data-testid='gameover-modal' ref={ ref }>
             <div className='title'>
                 <h1>Congratulations!</h1>
                 <h2>You did it!</h2>
@@ -46,7 +46,7 @@ const Gameover = forwardRef<HTMLDivElement, Props>(({ counter, restartGame }, re
             </div>
             { displayStarsEarned() }
             <div className='button-container'>
-                <button className='start-game-btn' onClick={ restartGame }>Play again</button>
+                <button className='start-game-btn' data-testid='start-game-btn' onClick={ restartGame }>Play again</button>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { render, cleanup } from '@testing-library/react';
 import Game, { Props } from '../components/Game';
 
-const renderChildComponents = (props: Partial<Props> = {}) => {
+const renderGameComponent = (props: Partial<Props> = {}) => {
     const defaultProps: Props = {
         cards: ['BlastoisePiplup.jpg', 'BlastoisePiplup.jpg', 'CelebiVenusaur.jpg', 
         'CelebiVenusaur.jpg', 'CharizardBraixen.jpg', 'CharizardBraixen.jpg', 'EeveeSnorlax.jpg', 'EeveeSnorlax.jpg', 
@@ -28,10 +28,10 @@ const renderChildComponents = (props: Partial<Props> = {}) => {
 
 describe('<Game />', () => {
     test('Display child components.', async () => {
-        const { findByTestId } = renderChildComponents();
+        const { findByTestId } = renderGameComponent();
         const gameComponent = await findByTestId('game');
         expect(gameComponent).toHaveAttribute('id', 'game');
     });
 });
 
-afterEach(cleanup);
+afterAll(cleanup);

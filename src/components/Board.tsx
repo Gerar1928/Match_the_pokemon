@@ -75,7 +75,7 @@ const Board = ({ setCounter, cards, flippedCard, setFlippedCard, gameoverRef, ov
     }
 
     return (
-        <div id='board' onClick={ flipCards } ref={ boardRef }>
+        <div id='board' data-testid='board' onClick={ flipCards } ref={ boardRef }>
             { cards.map((card: string, index: number): JSX.Element => <Card key={ index } imgName={ card } arrIndex={ index } />) }
         </div>
     );
