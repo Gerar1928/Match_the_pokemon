@@ -2,7 +2,7 @@
 
 ## About
 
-Match_the_pokemon is a memory matching card game in which all of the cards are laid face down. The object of the game is to turn over pairs of matching cards. Also, this game
+`Match_the_pokemon` is a memory matching card game in which all of the cards are laid face down. The object of the game is to turn over pairs of matching cards. Also, this game
 has a Pokémon TCG style.
 
 In one turn the player chooses two cards and turns them face up. If those two cards match the player will continue looking for the other matches, otherwise the cards will face down.
