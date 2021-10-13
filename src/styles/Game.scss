@@ -5,3 +5,9 @@
     margin: 5px auto 5px auto;
     width: 810px;
 }
+
+@media screen and (max-width: 634px) {
+    #game {
+        width: 400px;
+    }
+}

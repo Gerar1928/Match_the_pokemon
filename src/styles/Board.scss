@@ -7,3 +7,10 @@
     grid-auto-rows: minmax(165px, 180px);
     padding: 5px;
 }
+
+@media screen and (max-width: 634px) {
+    #board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 180px;
+    }
+}
