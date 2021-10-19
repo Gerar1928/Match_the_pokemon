@@ -3,7 +3,8 @@
 #gameover-modal {
     @extend %modal-style;
     bottom: 39%;
-    left: 38%;
+    left: 40%;
+    right: 40%;
     width: 300px;
 
     .title {
@@ -19,5 +20,21 @@
 
     .button-container {
         @extend %button-container-style;
+    }
+}
+
+@media screen and (max-width: 633px) {
+    #gameover-modal{
+        left: 20%;
+        right: 10%;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    #gameover-modal {
+        left: 10%;
+        right: 10%;
+        width: 80%;
     }
 }
